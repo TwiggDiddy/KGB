@@ -44,6 +44,11 @@ namespace KGB
                 
         }
 
+        void BNLookup()
+        {
+
+        }
+
         
     }
 }
