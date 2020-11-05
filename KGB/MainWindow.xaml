@@ -6,6 +6,31 @@
         xmlns:local="clr-namespace:KGB"
         mc:Ignorable="d"
         Title="" Height="223.51" Width="369.371" ResizeMode="NoResize" Background="#FF252526" WindowStyle="None">
+    <Window.Resources>
+        <ImageBrush x:Key="Brush1" ImageSource="Images/Search-icon.png"/>
+        
+            <Style x:Key="ButtonHover" TargetType="Button">
+                <Setter Property="OverridesDefaultStyle" Value="True" />
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="0.8" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        
+    </Window.Resources>
+    
+    
     <DockPanel x:Name="RootWindow">
         <DockPanel x:Name="TitleBar" DockPanel.Dock="Top" MouseDown="TitleBar_MouseDown" Background="#FF686868">
             <Button x:Name="CloseButton" Content="X"
@@ -14,7 +39,6 @@
             <Button x:Name="MinButton" Content="-"
                     Click="MinimizeButton_Click"
                     DockPanel.Dock="Right" />
-
             <TextBlock HorizontalAlignment="Center">KGB - Your Business is Our Business</TextBlock>
         </DockPanel>
 
@@ -32,14 +56,9 @@
             </Grid.RowDefinitions>
             <TextBox x:Name="cName" Grid.Column="1" Grid.Row="0" Height="23"  TextWrapping="NoWrap"   TextAlignment="Center"  Width="160"/>
             <TextBox x:Name="bNumber" Grid.Column="1" Grid.Row="1" Height="23"  TextWrapping="NoWrap" TextAlignment="Center" Width="160"/>
-            <Button Content="" Grid.Column="1" Grid.Row="2" Height="48" Width="46">
-                <Button.Background>
-                    <ImageBrush ImageSource="Search-icon.png"/>
-                </Button.Background>
-            </Button>
+            <Button Content="" Grid.Column="1" Grid.Row="2" Height="48" Width="48" Background="{DynamicResource Brush1}" Style="{StaticResource ButtonHover}"/>
             <TextBlock Grid.Column="0" Grid.Row="0"  Height="15" Foreground="#FFF7F7F7"  Text="Company Name" Margin="5,0,0,0"/>
             <TextBlock Grid.Column="0" Grid.Row="1"  Height="15" Foreground="#FFF7F7F7"  Text="Business Number" Margin="5,0,0,0"/>
-
         </Grid>
     </DockPanel>
 
