@@ -56,7 +56,7 @@
             </Grid.RowDefinitions>
             <TextBox x:Name="cName" Grid.Column="1" Grid.Row="0" Height="23"  TextWrapping="NoWrap"   TextAlignment="Center"  Width="160"/>
             <TextBox x:Name="bNumber" Grid.Column="1" Grid.Row="1" Height="23"  TextWrapping="NoWrap" TextAlignment="Center" Width="160"/>
-            <Button Content="" Grid.Column="1" Grid.Row="2" Height="48" Width="48" Background="{DynamicResource Brush1}" Style="{StaticResource ButtonHover}"/>
+            <Button Content="" Grid.Column="1" Grid.Row="2" Height="48" Width="48" Background="{DynamicResource Brush1}" Style="{StaticResource ButtonHover}" Click="Button_Click"/>
             <TextBlock Grid.Column="0" Grid.Row="0"  Height="15" Foreground="#FFF7F7F7"  Text="Company Name" Margin="5,0,0,0"/>
             <TextBlock Grid.Column="0" Grid.Row="1"  Height="15" Foreground="#FFF7F7F7"  Text="Business Number" Margin="5,0,0,0"/>
         </Grid>
